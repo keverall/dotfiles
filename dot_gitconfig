@@ -1,0 +1,13 @@
+[core]
+	autocrlf = false
+	editor = code --wait --new-window
+	eol = lf
+[user]
+	name = Kevin Everall
+	email = keverall@gmail.com
+[diff]
+	tool = vscode
+[merge]
+	tool = vscode
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
