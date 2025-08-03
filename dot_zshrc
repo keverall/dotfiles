@@ -361,3 +361,21 @@ if command -v fastfetch >/dev/null 2>&1 && [[ $- == *i* ]]; then
     echo ""
   } &!
 fi
+
+# Chezmoi aliases
+alias cz='chezmoi'
+alias cza='chezmoi add'
+alias czap='chezmoi apply'
+alias czcd='chezmoi cd'
+alias czd='chezmoi diff'
+alias cze='chezmoi edit'
+alias czs='chezmoi status'
+alias czu='chezmoi update'
+alias czr='chezmoi re-add'
+alias czm='chezmoi merge'
+alias czpu='chezmoi git push'
+alias czpl='chezmoi git pull'
+alias czst='chezmoi git status'
+alias czco='chezmoi git commit'
+alias czga='chezmoi git add .'
+alias czgca='chezmoi git add . && chezmoi git commit'
