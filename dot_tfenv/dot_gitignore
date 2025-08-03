@@ -1,7 +1,0 @@
-versions/
-version
-.terraform-version
-bin/terraform-*
-/use-gnupg
-/use-gpgv
-.*.swp
