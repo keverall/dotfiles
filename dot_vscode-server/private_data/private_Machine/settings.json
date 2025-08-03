@@ -1,0 +1,13 @@
+{
+    "ansible.ansible.reuseTerminal": true,
+    "ansible.executionEnvironment.enabled": true,
+    "files.associations": {
+        "*plays.yml": "ansible",
+        "*init.yml": "yaml",
+    },
+    "ansible.ansibleLint.enabled": true,
+    "ansible.ansibleLint": {
+        "config": ".ansible-lint.yml",
+        "executable": "ansible-lint",
+    }
+}
