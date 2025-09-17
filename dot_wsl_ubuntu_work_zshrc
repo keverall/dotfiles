@@ -1,0 +1,318 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# Suppress output during instant prompt initialization
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+typeset -g POWERLEVEL9K_INSTANT_PROMPT_COMMAND_LINES=1
+
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Use Zsh's built-in profiling to identify slow parts of your .zshrc:
+# zmodload zsh/zprof
+# source ~/.zshrc
+# zprof
+
+# Optimized completion settings
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
+zstyle ':completion:*' menu select
+zstyle ':completion:*:*:docker:*' option-stacking yes
+zstyle ':completion:*:*:docker-*:*' option-stacking yes
+
+
+# Path to your Oh My Zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+# Speed up compinit by skipping insecure directory checks (oh-my-zsh will use compinit -C)
+export ZSH_DISABLE_COMPFIX=true
+
+# Performance optimizations
+DISABLE_UNTRACKED_FILES_DIRTY="true"  # Speed up git status in large repos
+DISABLE_AUTO_UPDATE="true"  # Disable automatic updates for faster startup
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time Oh My Zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="powerlevel10k/powerlevel10k"
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(history)
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
+
+# Add virtual environment to the left prompt
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir virtualenv pyenv vcs newline prompt_char)
+
+# Virtual environment configuration
+POWERLEVEL9K_VIRTUALENV_SHOW_PYTHON_VERSION=true
+POWERLEVEL9K_VIRTUALENV_FOREGROUND=black
+POWERLEVEL9K_VIRTUALENV_BACKGROUND=green
+
+# Pyenv configuration (for Python version display)
+POWERLEVEL9K_PYENV_SHOW_PYTHON_VERSION=true
+POWERLEVEL9K_PYENV_FOREGROUND=white
+POWERLEVEL9K_PYENV_BACKGROUND=blue
+
+# Ensure virtual environment detection works
+POWERLEVEL9K_VIRTUALENV_GENERIC_NAMES=(virtualenv venv .venv)
+POWERLEVEL9K_VIRTUALENV_LEFT_DELIMITER=""
+POWERLEVEL9K_VIRTUALENV_RIGHT_DELIMITER=""
+
+export LS_COLORS="rs=0:no=00:mi=00:mh=00:ln=01;36:or=01;31:di=01;34:ow=04;01;34:st=34:tw=04;34:pi=01;33:so=01;33:do=01;33:bd=01;33:cd=01;33:su=01;35:sg=01;35:ca=01;35:ex=01;32:"
+
+
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in $ZSH/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+
+# Uncomment the following line to change how often to auto-update (in days).
+# zstyle ':omz:update' frequency 13
+# Oh My Zsh update optimization
+zstyle ':omz:update' mode auto      # Auto-update without prompting
+zstyle ':omz:update' frequency 7    # Check weekly instead of daily
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS="true"
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+HIST_STAMPS="yyyy-mm-dd"
+
+# (PATH and language env configured later in the PATH CONFIGURATION section)
+
+# True lazy loading for NVM
+nvm() {
+  unset -f nvm node npm
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
+  [ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"
+  nvm "$@"
+}
+
+# True lazy loading for pyenv
+pyenv() {
+  unset -f pyenv
+  export PYENV_ROOT="$HOME/.pyenv"
+  [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(command pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+  pyenv "$@"
+}
+
+# (Terraform completion configured once later; avoid duplicates)
+
+# Minimal plugin set for performance
+plugins=(
+         git
+         git-extras
+         history-substring-search
+         terraform
+         zsh-autosuggestions
+         common-aliases
+         aws
+         
+         # Python Development
+         python
+         pip
+         virtualenv
+         
+         # Development Workflow
+         jsontools
+         web-search
+         colored-man-pages
+         command-not-found
+         
+         # Enhanced Navigation & Productivity
+         copypath
+         copyfile
+         dirhistory
+          
+    # Keep syntax highlighting last for correctness/perf
+         zsh-syntax-highlighting
+)
+source $ZSH/oh-my-zsh.sh
+
+# Load p10k configuration (prefer compiled if available)
+if [[ -f ~/.p10k.zsh.zwc && ~/.p10k.zsh.zwc -nt ~/.p10k.zsh ]]; then
+  source ~/.p10k.zsh.zwc
+else
+  [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+fi
+# Auto-compile p10k config when changed (no-op if unchanged)
+if [[ -f ~/.p10k.zsh && ( ! -f ~/.p10k.zsh.zwc || ~/.p10k.zsh -nt ~/.p10k.zsh.zwc ) ]]; then
+  zmodload zsh/zcompile 2>/dev/null
+  zcompile -R -- ~/.p10k.zsh.zwc ~/.p10k.zsh 2>/dev/null
+fi
+
+# Aliases
+# Recompile Powerlevel10k config on demand
+alias p10k-rebuild='zmodload zsh/zcompile && zcompile -R -- ~/.p10k.zsh.zwc ~/.p10k.zsh'
+alias history="history -E"
+if [ -x "$(command -v eza)" ]; then
+    alias ls="eza --icons=auto"
+    alias la="eza -lag --icons=auto"
+    alias laa="eza -aalg --icons=auto"
+    alias lt1="eza -l@TL1 --icons=auto"
+    alias lt2="eza -l@TL2 --icons=auto"
+    alias lt3="eza -l@TL3 --icons=auto"
+fi
+alias gk="gitkraken"
+
+# Fastfetch alias - run manually when desired
+alias ff='fastfetch --logo-type sixel --logo ~/Downloads/Ubuntu-nice.jpg --logo-width 30'
+
+# VS Code (Windows) on WSL: add Code bin to PATH if present (no alias/function needed)
+if [[ -d "/mnt/c/Users/keverall/AppData/Local/Programs/Microsoft VS Code/bin" ]]; then
+  export PATH="/mnt/c/Users/keverall/AppData/Local/Programs/Microsoft VS Code/bin:$PATH"
+fi
+
+# Additional directory navigation aliases
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias -- -="cd -"
+
+# Enhanced git aliases (supplements the git plugin)
+alias gaa="git add --all"
+alias gcm="git commit -m"
+alias gcam="git commit -a -m"
+alias gco="git checkout"
+alias gcb="git checkout -b"
+alias gst="git status"
+alias glog="git log --oneline --decorate --graph"
+alias gp="git push"
+alias gpl="git pull"
+alias gf="git fetch"
+alias gr="git remote -v"
+alias gd="git diff"
+alias gdc="git diff --cached"
+
+# AWS CLI shortcuts (supplements the aws plugin)
+alias awsp="aws sts get-caller-identity"
+alias awsl="aws s3 ls"
+alias awsec2="aws ec2 describe-instances"
+alias awslogs="aws logs describe-log-groups"
+
+# Enhanced jq aliases for JSON processing
+alias jqp='jq .'                           # Pretty print JSON
+alias jqk='jq keys'                        # Get all keys
+alias jqv='jq values'                      # Get all values  
+alias jql='jq length'                      # Get length/count
+alias jqt='jq type'                        # Get type of JSON
+alias jqs='jq -S .'                        # Sort keys and pretty print
+alias jqr='jq -r'                          # Raw output (no quotes)
+alias jqc='jq -c .'                        # Compact JSON (single line)
+alias jqm='jq -M .'                        # Monochrome output
+alias jqf='jq -f'                          # Read filter from file
+alias jqcsv='jq -r "(map(keys) | add | unique) as \$cols | map(. as \$row | \$cols | map(\$row[.])) as \$rows | \$cols, \$rows[] | @csv"'  # Convert JSON to CSV
+
+# source "$HOME/.cargo/env"
+
+# ===== PATH CONFIGURATION =====
+# Build PATH efficiently in one comprehensive export
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.local/bin:/snap/bin"
+
+# Version managers (conditional for pyenv, combined for others)
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d "$PYENV_ROOT/bin" ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="$HOME/.goenv/bin:$HOME/.tfenv/bin:$PATH"
+
+# Language-specific paths
+export DENO_INSTALL="$HOME/.deno"
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH="$DENO_INSTALL/bin:$GOPATH/bin:$GOROOT/bin:$PATH"
+
+# VS Code PATH handled above (conditional block)
+
+# Additional completion paths added conditionally below
+
+# ===== END PATH CONFIGURATION =====
+
+# Only set terraform completion if terraform exists (suppress any output)
+if command -v terraform >/dev/null 2>&1; then
+  autoload -U +X bashcompinit && bashcompinit
+  complete -o nospace -C /usr/bin/terraform terraform 2>/dev/null
+fi
+
+# Add custom completion path if directory exists
+if [[ -d ~/.zsh/completion ]]; then
+  fpath=($fpath ~/.zsh/completion)
+fi
+
+# Start shells in ~/repos when launching from home
+if [[ $- == *i* ]] && [[ "$PWD" == "$HOME" ]] && [[ -d "$HOME/repos" ]]; then
+  cd "$HOME/repos" >/dev/null 2>&1
+fi
+
+# Ubuntu Splash Screen on startup
+# Only run if fastfetch is available and we're in an interactive shell
+# Use delayed execution to avoid interfering with Powerlevel10k instant prompt
+if command -v fastfetch >/dev/null 2>&1 && [[ $- == *i* ]]; then
+  # Schedule Ubuntu splash to run after zsh initialization completes
+  {
+    # Wait for instant prompt to finish
+    sleep 0.2
+    
+    # Clear screen for clean Ubuntu splash
+    clear
+    
+    # Display Ubuntu splash screen with system info
+    echo ""
+    echo "🟠 Welcome to Ubuntu on WSL2! 🟠"
+    echo ""
+    
+    # Run fastfetch with Ubuntu logo and clean layout
+    fastfetch --logo ubuntu-studio \
+              --logo-width 25 \
+              --logo-padding-top 1 \
+              --separator "  " \
+              --color-keys cyan \
+              --color-title magenta
+    
+    echo ""
+    echo "💻 Happy coding! Use 'ff' for custom fastfetch or 'fastfetch' anytime."
+    echo ""
+  } &!
+fi
