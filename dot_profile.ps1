@@ -4,10 +4,10 @@ using namespace System.Management.Automation.Language
 oh-my-posh init pwsh | Invoke-Expression
 
 
-if ($host.Name -eq 'ConsoleHost')
-{
-    Import-Module PSReadLine
-}
+# if ($host.Name -eq 'ConsoleHost')
+# {
+#     Import-Module PSReadLine
+# }
 
 Import-Module z
 set-alias desktop "Desktop.ps1"
@@ -27,22 +27,51 @@ Set-PSReadLineOption -EditMode Windows
 Import-Module Terminal-Icons
 
 # Unix aliases
-Set-Alias -Name ls -Value Get-ChildItem
-Set-Alias -Name cat -Value Get-Content
-Set-Alias -Name rm -Value Remove-Item
-Set-Alias -Name mv -Value Move-Item
-Set-Alias -Name cp -Value Copy-Item
+Set-Alias cat Get-Content
+Set-Alias rm Remove-Item
+Set-Alias mv Move-Item
+
+# Set-Alias ll 'eza -lG --icons=auto --color=always'
+
+function ezald {eza -lD --icons=auto --color=always}
+Set-Alias ld ezald
+function ezalf {eza -lf --icons=auto --color=always}
+Set-Alias lf ezalf
+function ezals {eza --icons=auto --color=always}
+Set-Alias ls ezals
+function ezala {eza -lag --icons=auto --color=always}
+Set-Alias la ezala
+function ezalA {eza -lAg --icons=auto --color=always}
+Set-Alias lA ezalA
+function ezalaa {eza -aalg --icons=auto --color=always}
+Set-Alias laa ezalaa
+function ezalt1 {eza -l@TL1 --icons=auto --color=always}
+Set-Alias lt1 ezalt1
+function ezalt2 {eza -l@TL2 --icons=auto --color=always}
+Set-Alias lt2 ezalt2
+function ezalt3 {eza -l@TL3 --icons=auto --color=always}
+Set-Alias lt3 ezalt3
 
 # Directory navigation aliases
-Set-Alias -Name docs -Value 'Set-Location C:\Users\YourUsername\Documents'
-Set-Alias -Name dl -Value 'Set-Location C:\Users\YourUsername\Downloads'
-Set-Alias -Name desktop -Value 'Set-Location C:\Users\YourUsername\Desktop'
+Set-Alias docs 'Set-Location C:\Users\YourUsername\Documents'
+Set-Alias dl 'Set-Location C:\Users\YourUsername\Downloads'
+Set-Alias desktop 'Set-Location C:\Users\YourUsername\Desktop'
 
 # Process management aliases
-Set-Alias -Name ps -Value Get-Process
-Set-Alias -Name kill -Value Stop-Process
+Set-Alias ps Get-Process
+Set-Alias kill Stop-Process
 
-# Custom Git aliases
+function ezall {eza -lG --icons=auto --color=always}
+
+Set-Alias ll ezall
+
+
+function Get-ChildItemUnix {
+    Get-ChildItem $Args[0] |
+        Format-Table Mode, @{N='Owner';E={(Get-Acl $_.FullName).Owner}}, Length, LastWriteTime, @{N='Name';E={if($_.Target) {$_.Name+' -> '+$_.Target} else {$_.Name}}}
+}
+# New-Alias ll Get-ChildItemUnix
+
 function gst {
     git status
 }
@@ -747,7 +776,7 @@ Set-PSReadLineKeyHandler -Key Ctrl+Shift+t `
     [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
 }
 
-winget upgrade --all --include-unknown
+# winget upgrade --all --include-unknown
 
 
 #f45873b3-b655-43a6-b217-97c00aa0db58 PowerToys CommandNotFound module
