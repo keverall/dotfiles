@@ -1,0 +1,324 @@
+{
+  "redhat.telemetry.enabled": false,
+  "gitlens.defaultDateFormat": null,
+  "editor.fontFamily": "\"MesloLGL Nerd Font Mono\"",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 15,
+  "editor.codeLensFontSize": 15,
+  "terminal.integrated.fontFamily": "\"MesloLGL Nerd Font Mono\"",
+  "terminal.integrated.fontSize": 15,
+  "terminal.integrated.fontWeight": "500",
+  "markdown.preview.fontSize": 15,
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  "debug.console.fontFamily": "\"MesloLGL Nerd Font Mono\"",
+  "editor.fontWeight": "500",
+  "editor.inlayHints.fontFamily": "\"MesloLGL Nerd Font Mono\"",
+  "editor.codeLensFontFamily": "\"MesloLGL Nerd Font Mono\"",
+  "workbench.sideBar.location": "right",
+  "workbench.settings.editor": "json",
+  "editor.rulers": [
+    72,
+    80
+  ],
+  "workbench.colorCustomizations": {
+    "editorRuler.foreground": "#ff4081"
+  },
+  "npm.enableScriptExplore": true,
+  "terraform-ls.terraformExecPath": "usr/bin/terraform",
+  "[terraform]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "hashicorp.terraform"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "vsicons.dontShowNewVersionMessage": true,
+  "workbench.productIconTheme": "developer-icons",
+  "bracket-pair-colorizer-2.depreciation-notice": false,
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.lineHeight": 1.1,
+  "terminal.external.windowsExec": "wt.exe",
+  "terminal.external.linuxExec": "wt.exe",
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.automationProfile.windows": {
+    "path": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+    "args": [
+      "-d",
+      "PowerShell 7"
+    ]
+  },
+  "terminal.integrated.gpuAcceleration": "auto",
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.rightClickBehavior": "paste",
+  "remote.WSL.fileWatcher.polling": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "gitlens.views.branches.branches.layout": "list",
+  "diffEditor.maxComputationTime": 0,
+  "workbench.startupEditor": "none",
+  "editor.guides.bracketPairs": true,
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "files.autoSave": "afterDelay",
+  "editor.suggest.showMethods": true,
+  "editor.suggest.preview": true,
+  "editor.acceptSuggestionOnEnter": "on",
+  "editor.snippetSuggestions": "top",
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell"
+    },
+    "Command Prompt": {
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe"
+      ],
+      "args": [],
+      "icon": "terminal-cmd"
+    },
+    "Git Bash": {
+      "source": "Git Bash"
+    },
+    "Ubuntu-22.04 (WSL)": {
+      "path": "C:\\Windows\\System32\\wsl.exe",
+      "args": [
+        "-d",
+        "Ubuntu-22.04"
+      ],
+      "icon": "terminal-ubuntu"
+    },
+    "ubuntudev": {
+      "path": "C:\\Windows\\System32\\wsl.exe",
+      "args": [
+        "-d",
+        "Ubuntu-22.04"
+      ],
+      "icon": "terminal-ubuntu"
+    },
+    "Windows PowerShell": {
+      "path": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+    }
+  },
+  "go.toolsManagement.autoUpdate": true,
+  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "editor.accessibilitySupport": "off",
+  "gitlens.showWelcomeOnInstall": false,
+  "gitlens.currentLine.dateFormat": "",
+  "gitlens.defaultDateLocale": null,
+  "security.allowedUNCHosts": [
+    "wsl.localhost"
+  ],
+  "GitLive.Special branches": "main|master|trunk|dev|develop|qa|test|release[-/].*",
+  "GitLive.Issue tracker integration": "Disabled",
+  "git.enableSmartCommit": true,
+  "accessibility.signals.terminalQuickFix": {
+    "announcement": "off"
+  },
+  "accessibility.signals.terminalCommandFailed": {
+    "announcement": "off",
+    "sound": "off"
+  },
+  "accessibility.signals.terminalBell": {
+    "announcement": "off",
+    "sound": "off"
+  },
+  "accessibility.signals.clear": {
+    "announcement": "off"
+  },
+  "git.confirmSync": false,
+  "github.copilot.enable": {
+    "python": true,
+    "markdown": true,
+    "terraform": true,
+    "typescript": true,
+    "javascript": true,
+    "go": true
+  },
+  "github.copilot.advanced": {},
+  "notebook.lineNumbers": "on",
+  "maven.terminal.useJavaHome": true,
+  "makefile.configureOnOpen": true,
+  "window.openFilesInNewWindow": "on",
+  "debug.console.fontSize": 15,
+  "python.analysis.typeCheckingMode": "standard",
+  "python.analysis.diagnosticMode": "workspace",
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    },
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "python.linting.enabled": true,
+  "python.linting.lintOnSave": true,
+  "python.linting.pylintEnabled": true,
+  "python.linting.pylintArgs": [
+    "--disable=C0111",
+    "--disable=missing-module-docstring",
+    "--disable=missing-class-docstring",
+    "--disable=missing-function-docstring"
+  ],
+  "pylint.args": [
+    "--disable=missing-module-docstring",
+    "--disable=missing-class-docstring",
+    "--disable=missing-function-docstring"
+  ],
+  "python.linting.flake8Enabled": false,
+  "python.linting.mypyEnabled": false,
+  "python.formatting.provider": "black",
+  "python.formatting.blackArgs": [
+    "--line-length=88"
+  ],
+  "isort.args": [
+    "--profile",
+    "black"
+  ],
+  "isort.check": true,
+  "isort.importStrategy": "useBundled",
+  "notebook.defaultFormatter": "ms-python.black-formatter",
+  "peacock.affectDebuggingStatusBar": true,
+  "peacock.affectEditorGroupBorder": true,
+  "peacock.affectPanelBorder": true,
+  "peacock.affectSideBarBorder": true,
+  "peacock.affectStatusAndTitleBorders": true,
+  "peacock.affectTabActiveBorder": true,
+  "peacock.favoriteColors": [
+    {
+      "name": "Angular Red",
+      "value": "#dd0531"
+    },
+    {
+      "name": "Azure Blue",
+      "value": "#007fff"
+    },
+    {
+      "name": "JavaScript Yellow",
+      "value": "#f9e64f"
+    },
+    {
+      "name": "Mandalorian Blue",
+      "value": "#1857a4"
+    },
+    {
+      "name": "Node Green",
+      "value": "#215732"
+    },
+    {
+      "name": "React Blue",
+      "value": "#61dafb"
+    },
+    {
+      "name": "Something Different",
+      "value": "#832561"
+    },
+    {
+      "name": "Svelte Orange",
+      "value": "#ff3d00"
+    },
+    {
+      "name": "Vue Green",
+      "value": "#42b883"
+    }
+  ],
+  "peacock.surpriseMeFromFavoritesOnly": true,
+  "[go]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "golang.go"
+  },
+  "gopls": {
+    "formatting.gofumpt": true
+  },
+  "[tf]": {},
+  "docker.extension.dockerEngineAvailabilityPrompt": false,
+  "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "mssql.connectionGroups": [
+    {
+      "name": "ROOT",
+      "id": "33657620-3A1B-418E-AF2C-8BADFE345C9A"
+    }
+  ],
+  "mssql.connections": [],
+  "workbench.panel.showLabels": false,
+  "editor.defaultFoldingRangeProvider": "ms-python.pylint",
+  "jupyter.enableExtendedPythonKernelCompletions": true,
+  "python.analysis.addHoverSummaries": true,
+  "python.analysis.aiCodeActions": {
+    "implementAbstractClasses": true
+  },
+  "python.analysis.completeFunctionParens": true,
+  "pythonIndent.trimLinesWithOnlyWhitespace": true,
+  "pythonIndent.useTabOnHangingIndent": true,
+  "pythonIndent.keepHangingBracketOnLine": true,
+  "monokaiPro.fileIconsMonochrome": true,
+  "files.associations": {
+    "*.py": "python"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "editor.inlayHints.fontSize": 15,
+  "editor.suggestFontSize": 15,
+  "scm.inputFontSize": 15,
+  "workbench.iconTheme": "Monokai Pro (Filter Spectrum) Monochrome Icons",
+  "terminal.integrated.defaultProfile.linux": "ubuntudev",
+  "terminal.integrated.automationProfile.linux": {
+    "path": "wsl.exe",
+    "args": [
+      "-d",
+      "Ubuntu-22.04"
+    ]
+  },
+  "workbench.editor.enablePreview": false,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.extraCommitChars": true,
+  "[java]": {
+    "editor.suggest.snippetsPreventQuickSuggestions": false
+  },
+  "workbench.editor.empty.hint": "hidden",
+  "java.test.config": [
+    {
+      "name": "myConfiguration",
+      "workingDirectory": "${workspaceFolder}",
+      "vmargs": [
+        "-Xmx512M"
+      ],
+      "env": {
+        "key": "value"
+      },
+    },
+    {
+      // Another configuration item...
+    },
+  ],
+  "python.experiments.enabled": false,
+  "python.terminal.activateEnvInCurrentTerminal": true,
+  "terminal.integrated.suggest.enabled": true,
+  "terminal.integrated.shellIntegration.environmentReporting": true,
+  "aws.cloudformation.telemetry.enabled": true,
+  "roo-cline.allowedCommands": [
+    "git log",
+    "git diff",
+    "git show"
+  ],
+  "roo-cline.deniedCommands": [],
+  "notebook.markup.fontFamily": "\"MesloLGL Nerd Font Mono\"",
+  "notebook.output.fontFamily": "\"MesloLGL Nerd Font Mono\"",
+  "terminal.integrated.tabs.defaultIcon": "terminal-powershell",
+  "chat.tools.terminal.blockDetectedFileWrites": "never",
+  "terminal.integrated.automationProfile.osx": {},
+  "gitlens.ai.model": "vscode",
+  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+  "powershell.buttons.showPanelMovementButtons": true,
+  "powershell.integratedConsole.focusConsoleOnExecute": false,
+  "terminal.integrated.cwd": ""
+}
