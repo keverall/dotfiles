@@ -1,13 +1,40 @@
+[init]
+    defaultBranch = main
+
 [core]
 	autocrlf = false
 	editor = code --wait --new-window
 	eol = lf
-[user]
-	name = Kevin Everall
-	email = keverall@gmail.com
+
+[pull]
+    rebase = true  # or "merges" if you want to preserve merge commits
+
+[push]
+    default = current
+    autoSetupRemote = true
+
+[rebase]
+    autoSquash = true
+    autoStash = true
+
 [diff]
 	tool = vscode
+
 [merge]
+
+    ff = only  # only allow fast-forward merges
 	tool = vscode
+
 [mergetool "vscode"]
 	cmd = code --wait $MERGED
+
+
+[advice]
+    detachedHead = false
+
+[credential]
+    helper = cache  # cache credentials for 15 minutes (default); use "store" for permanent
+
+[user]
+	email = keverall@gmail.com
+	name = Kev Everall
