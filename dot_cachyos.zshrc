@@ -322,15 +322,6 @@ if [[ "$TERM_PROGRAM" == "vscode" ]] && [[ "$PWD" == "$HOME" ]]; then
 fi
 
 # CachyOS Splash Screen on startup
-# Only run if fastfetch is available and we're in an interactive shell
-# Use delayed execution to avoid interfering with Powerlevel10k instant prompt
-if command -v fastfetch >/dev/null 2>&1 && [[ $- == *i* ]]; then
-  # Schedule CachyOS splash to run after zsh initialization completes
-  {
-    # Wait for instant prompt to finish
-    sleep 0.2
-    
-    # CachyOS Splash Screen on startup (Synchronous)
 if command -v fastfetch >/dev/null 2>&1 && [[ $- == *i* ]]; then
     echo ""
     echo "🟠 Welcome to CachyOS! 🟠"
