@@ -9,7 +9,7 @@ fi
 
 # Suppress output during instant prompt initialization
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
-typeset -g POWERLEVEL9K_INSTANT_PROMPT_COMMAND_LINES=1
+# typeset -g POWERLEVEL9K_INSTANT_PROMPT_COMMAND_LINES=1
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -255,7 +255,7 @@ export GOPATH=$HOME/go
 export PATH="$DENO_INSTALL/bin:$GOPATH/bin:$GOROOT/bin:$PATH"
 
 # VS Code PATH
-export PATH="$PATH:/mnt/c/Users/kever/AppData/Local/Programs/Microsoft VS Code/bin"
+# export PATH="$PATH:/mnt/c/Users/kever/AppData/Local/Programs/Microsoft VS Code/bin"
 
 # Initialize version managers (lazy loading for speed)
 # eval "$(pyenv init - zsh)"  # Already initialized above
@@ -330,26 +330,20 @@ if command -v fastfetch >/dev/null 2>&1 && [[ $- == *i* ]]; then
     # Wait for instant prompt to finish
     sleep 0.2
     
-    # Clear screen for clean CachyOS splash
-    # clear
-    
-    # Display CachyOS splash screen with system info
+    # CachyOS Splash Screen on startup (Synchronous)
+if command -v fastfetch >/dev/null 2>&1 && [[ $- == *i* ]]; then
     echo ""
     echo "🟠 Welcome to CachyOS! 🟠"
     echo ""
-    
-    # Run fastfetch with CachyOS logo and clean layout
     fastfetch --logo cachyos \
               --logo-width 25 \
               --logo-padding-top 1 \
               --separator "  " \
               --color-keys cyan \
               --color-title magenta
-    
     echo ""
     echo "💻 Happy coding! Use 'ff' for custom fastfetch or 'fastfetch' anytime."
     echo ""
-  } &!
 fi
 
 # Chezmoi aliases
